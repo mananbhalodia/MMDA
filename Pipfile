@@ -1,0 +1,26 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+
+[packages]
+
+dj-database-url = "*"
+django = "*"
+gunicorn = "*"
+"psycopg2" = "*"
+whitenoise = "*"
+requests = "*"
+dateutils = "*"
+radar = "*"
+django-multiupload = "*"
+"beautifulsoup4" = "*"
+django-datetime-widget = "*"
+python-dateutil = "*"
+"html5lib" = "==0.999999"
+
+
+[requires]
+
+python_version = "3.6"

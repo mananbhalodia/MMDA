@@ -1,0 +1,52 @@
+<!-- dagr reports and queries -->
+{% extends "dagr/base.html" %}
+
+{% block content %}
+  <!-- Html Parser form -->
+  <div class="container">
+    <div class="row">
+      {% if form %}
+        <form action="{% url 'dagr:metadata' %}" method="post" class="form">
+          {{ form.as_p }}
+          {% csrf_token %}
+          <input type="submit" value="Search" class="btn btn-primary btn-lg">
+        </form>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="container">
+    <div class="row">
+      {% if results %}
+      <table class="table table-striped">
+        <thead>
+            <tr>
+              <th>GUID</th>
+              <th>Real Name</th>
+              <th>Assigned Name</th>
+              <th>Type</th>
+              <th>Size</th>
+              <th>Author</th>
+              <th>Category</th>
+              <th>Date Created</th>
+            </tr>
+        </thead>
+        {% for result in results %}
+        <tbody>
+          <tr>
+              <td><a href={{ result.get_absolute_url }}>{{ result.Guid }}</a></td>
+              <td>{{ result.RealName}}</td>
+              <td>{{ result.AssignedName }}</td>
+              <td>{{ result.Type }}</td>
+              <td>{{ result.Size }}</td>
+              <td>{{ result.Author }}</td>
+              <td>{{ result.CategoryID }}</td>
+              <td>{{ result.DateCreated }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      {% endif %}
+  </div>
+  </div>
+{% endblock %}

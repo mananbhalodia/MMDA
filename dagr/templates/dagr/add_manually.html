@@ -1,0 +1,48 @@
+{% extends "dagr/base.html" %}
+
+{% block content %}
+<!-- Interface for adding to database -->
+
+
+<!-- Add a single DAGR manually -->
+  <div class="container">
+    <div class="row">
+      {% if form %}
+      <form action="." method="post" class="form">
+
+      {{ form.as_p }}
+      {% csrf_token %}
+        <!--
+        {% for field in form %}
+          <div class="form-group">
+              {{ field.errors }}
+              <label for={{field}}> {{ field.label_tag }} </label>
+              {{ field }}
+              {% if field.help_text %}
+                <p class="help">{{ field.help_text|safe }}</p>
+              {% endif %}
+          </div>
+        {% endfor %}
+        {% csrf_token %}
+      -->
+      <input type="submit" value="Submit" class="btn btn-primary btn-lg" >
+    </form>
+
+<!--
+      <p><h2>Add single DAGR manually</h2></p>
+      <form action="{% url 'dagr:add_manually' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_table }}
+
+      </form>
+-->
+  {% endif %}
+    </div>
+  </div>
+
+
+
+
+
+
+{% endblock %}

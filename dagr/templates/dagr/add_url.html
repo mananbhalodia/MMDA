@@ -1,0 +1,18 @@
+{% extends "dagr/base.html" %}
+
+{% block content %}
+
+  <!-- Html Parser form -->
+  <div class="container">
+    <div class="row">
+      {% if form %}
+        <p><h2>HTML Parser</h2></p>
+        <form action="." method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Submit" class="btn btn-primary btn-lg">
+        </form>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+<!-- Html Parser form -->
+<div class="container">
+  <div class="row">
+    {% if categoryForm %}
+      <form action="{% url 'dagr:metadata' %}" method="post">
+        {% csrf_token %}
+        {{ categoryForm.as_p }}
+        <input type="submit" value="Search">
+      </form>
+    {% endif %}
+
+    {% if categoryForm %}
+      <form action="{% url 'dagr:metadata' %}" method="post">
+        {% csrf_token %}
+        {{ categoryForm.as_p }}
+        <input type="submit" value="Search">
+      </form>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>

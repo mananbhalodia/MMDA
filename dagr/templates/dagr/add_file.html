@@ -1,0 +1,27 @@
+{% extends "dagr/base.html" %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      {% if count %}
+        <h3>{{count}} file(s) saved</h3>
+      {% endif %}
+    </div>
+  </div>
+
+
+  <!-- Bulk data entry form -->
+  <div class="container">
+    <div class="row">
+    {% if form %}
+      <p><h2>Upload file(s)</h2></p>
+      <form action="{% url 'dagr:add_file' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" class="btn btn-primary btn-lg">
+      </form>
+
+    {% endif %}
+  </div>
+  </div>
+  {% endblock %}
