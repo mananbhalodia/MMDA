@@ -18,7 +18,7 @@ django-multiupload = "*"
 "beautifulsoup4" = "*"
 django-datetime-widget = "*"
 python-dateutil = "*"
-"html5lib" = "==0.999999"
+"html5lib" = "==0.999999999"
 
 
 [requires]
